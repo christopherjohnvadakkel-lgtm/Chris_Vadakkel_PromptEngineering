@@ -7,7 +7,6 @@ Date: June 6th 2026
 LLM Used: ChatGPT-4
 
 
-
 ## Part 1: Prompt Design & Iteration
 
 ### 1.1 Scenario A: Technical Explanation
@@ -32,7 +31,7 @@ A nuclear reaction is when tiny pieces inside an atom change and release energy.
 
 ####Final Prompt :
 
-Act as science teacher that works with 10 years olds and understands them deeply. Explain nuclear reactions to a curious 10 year old who has never studied science before. Use a fun analogy, define atoms in simple terms, explain why energy is released, and describe one real-world example. Keep the explanation engaging, conversational, and under 200 words.
+Act as science teacher that works with 10 years olds constantly and understands them deeply. Explain nuclear reactions to a curious 10 year old who has never studied science before. Use a fun analogy, define atoms in simple terms, explain why energy is released, and describe one real-world example. Keep the explanation engaging, conversational, and under 200 words.
 
 ####Final Output :
 
@@ -57,9 +56,7 @@ Subject: Job Offer
 Dear Hiring Manager,
 
 Thank you for offering me the job. I appreciate the opportunity, but I have decided not to accept the position.
-
 I am still interested in your company and hope we can stay in touch.
-
 Thank you again.
 
 Best regards,
@@ -69,8 +66,6 @@ Christopher
 ####Second Prompt :
 
 Write a professional email declining a job offer. Thank the hiring manager for their time, explain that I have accepted another opportunity, and express continued interest in the company for future opportunities.
-
-
 
 ####Second Output :
 
@@ -87,93 +82,44 @@ Best regards,
 
 Christopher
 
-
-
 ####Final Prompt :
-
-
 
 Write a professional and courteous email declining a job offer because I have accepted another opportunity. Thank the hiring team for their time and effort, express genuine appreciation for the offer, and explain that I remain interested in the company and would welcome future opportunities. Use a warm, respectful, and positive tone. Keep the email between 150–200 words.
 
-
-
 #### Final Output
-
-
 
 Subject:Thank You for the Opportunity
 
-
-
 Dear Hiring Manager,
 
-
-
 Thank you very much for offering me the position. I sincerely appreciate the time and effort that you and the team invested throughout the interview process and for the confidence you showed in my abilities.
-
-
-
 After careful consideration, I have decided to accept another opportunity that aligns more closely with my current career goals. As a result, I must respectfully decline your offer.
-
-
-
 This decision was not easy, as I was genuinely impressed by your company's culture, values, and the people I met during the hiring process. I greatly appreciate the opportunity to learn more about the organization.
-
-
-
 I hope to stay connected and would welcome the chance to be considered for future opportunities should our paths cross again.
-
-
 
 Thank you once again for your understanding and consideration. I wish you and the team continued success.
 
 
-
 Kind regards,
-
-
 
 Christopher Vadakkel
 
-
-
-
-
 ### 1.1 Scenario C: Creative Content
-
-
 
 **Goal:**Generate a creative marketing tagline for a new eco-friendly water bottle brand
 
-
-
 #### Initial Prompt
-
-
-
 Create a marketing tagline for , Green - Z a water bottle brand.
-
-
 
 #### Initial Output
 
-
-
 Green-Z: The Eco-Friendly Water Bottle.
-
-
 
 #### Second Prompt :
 
-
-
 Create five catchy marketing taglines for Green-Z, an eco-friendly water bottle brand. Focus on sustainability, reducing plastic waste, and staying hydrated.
 
-
-
 #### Second Output
-
-
 
 1. Green-Z: Drink Green, Live Clean.
 
@@ -185,19 +131,13 @@ Create five catchy marketing taglines for Green-Z, an eco-friendly water bottle 
 
 5. Choose Green-Z, Choose Change.
 
-
-
 #### Final Prompt :
 
 
 
 You are the top .1% branding expert in India. Create five catchy marketing taglines for Green-Z, an eco-friendly water bottle brand. Focus on sustainability, reducing plastic waste, and staying hydrated. The bottle brand is targeting Gen-Z and the tagline should use their lingo. We want the tag line to be funny, culturally relevant and targeting Gen-Z living in Tier 1 cities
 
-
-
 #### Final Output
-
-
 
 1. Green-Z: Main Character Energy, Zero Plastic Drama.
 
@@ -212,9 +152,6 @@ You are the top .1% branding expert in India. Create five catchy marketing tagli
 
 
 ### 1.2 Iteration Documentation
-
-
-
 
 
 #### Scenario A: Technical Explanation
@@ -275,18 +212,167 @@ You are the top .1% branding expert in India. Create five catchy marketing tagli
 
 | V3 | You are the top .1% branding expert in India. Create five catchy marketing taglines for Green-Z, an eco-friendly water bottle brand. Focus on sustainability, reducing plastic waste, and staying hydrated. The bottle brand is targeting Gen-Z and the tagline should use their lingo. We want the tag line to be funny, culturally relevant and targeting Gen-Z living in Tier 1 cities | Gave a specific seniority of role and Added a specific target audience, required Gen-Z language, requested humor and cultural relevance, and specified an urban demographic. | The taglines became more audience-focused, memorable, and aligned with the brand's intended market and communication style. |
 
-
-
 ### 1.3 Role and Context Usage
 
+In **Scenario A**, I used role assignment by stating that it needs to be answered by a science teacher who teaches and understands 10 year olds and then asking the model to explain nuclear reactions to a curious 10-year-old who had never studied science before. This provided context about the audience's age and knowledge level, which resulted in a simpler, more engaging explanation that used analogies and avoided technical jargon.
+
+In **Scenario C**, I used role assignment by stating i was the top .1% branding expert in India and then context setting was set by specifying that the target audience was Gen-Z consumers living in Tier 1 cities and that the taglines should be funny, culturally relevant, and use Gen-Z lingo. This additional background information helped the model generate marketing taglines that were more creative, relatable, and tailored to the intended audience.
+
+Overall, role assignment helped the model to add a level of expertise in the output, while context setting provided the necessary information to create outputs that were more relevant, targeted, and effective and adapt its communication style to the audience
+
+## Part 3: Advanced Prompting Techniques
+
+### 3.1 Chain-of-Thought Prompting
+
+**Selected Problem:** Option A: Math/Logic Problem
+
+**Problem:**  
+If a train travels 120 km in 2 hours, then stops for 30 minutes, then travels another 90 km in 1.5 hours, what is its average speed for the entire journey?
+
+---
+
+#### Without Chain-of-Thought
+
+**Prompt:**
+
+What is the average speed of a train that travels 120 km in 2 hours, stops for 30 minutes, then travels another 90 km in 1.5 hours? Give only the final answer.
+
+**LLM Output:**
+
+The average speed is **52.5 km/h**.
+
+---
+
+#### With Chain-of-Thought
+
+**Prompt:**
+
+A train travels 120 km in 2 hours, then stops for 30 minutes, then travels another 90 km in 1.5 hours. Calculate the average speed for the entire journey. Break the solution into clear steps by identifying the total distance, converting all time values into hours, including the stopped time in the total journey time, and then using the formula average speed = total distance ÷ total time. Show the calculation clearly and provide the final answer with units.
+
+**LLM Output with Reasoning:**
+
+To find the average speed for the entire journey, I need to calculate the total distance and divide it by the total time, including the stop.
+
+First, calculate the total distance traveled:
+
+120 km + 90 km = 210 km
+
+Next, calculate the total time. The train travels for 2 hours, stops for 30 minutes, and then travels for another 1.5 hours. Since 30 minutes is equal to 0.5 hours, the total time is:
+
+2 hours + 0.5 hours + 1.5 hours = 4 hours
+
+Now use the average speed formula:
+
+Average speed = total distance ÷ total time
+
+Average speed = 210 km ÷ 4 hours
+
+Average speed = 52.5 km/h
+
+Therefore, the train's average speed for the entire journey is **52.5 km/h**.
+
+---
+
+#### Comparison
 
 
-In Scenario B (Professional Email), role assignment and context setting significantly improved the quality of the output. By specifying that the email should be professional and courteous, the model adopted the appropriate tone for communicating with a hiring manager. Providing context that the offer was being declined because another opportunity had been accepted helped generate a more realistic and transparent response.
+The output without chain-of-thought gave only the final answer, while the chain-of-thought version showed how the answer was calculated. The improved chain-of-thought prompt was more effective because it did not just say “solve step by step”; it told the model exactly which steps to follow, including converting 30 minutes into hours and including the stop in the total time. Chain-of-thought prompting helps with complex reasoning because it makes the model organize the problem into smaller parts, reducing the chance of skipping important information. One limitation is that this method can make the response longer than necessary for simple problems.
 
 
+### 3.2 Few-Shot Prompting
 
-In **Scenario C (Creative Content)**, adding context about the target audience (Gen-Z consumers living in Tier 1 cities) and specifying the desired tone (funny, culturally relevant, and using Gen-Z lingo) resulted in much more engaging and effective taglines. The additional context helped the model create content that was tailored to the intended audience rather than producing generic marketing slogans.
+**Task:** Create a sentiment classifier using few-shot prompting.
 
+**Mission:** Teach the LLM to classify customer reviews as **Positive**, **Negative**, or **Neutral**.
 
+---
 
-Overall, role assignment guided the style and tone of the responses, while context setting provided the model with the background information needed to generate more relevant, targeted, and higher-quality outputs.
+#### Step 1: Zero-Shot Attempt
+
+**Zero-Shot Prompt:**
+
+Classify the sentiment of each customer review as Positive, Negative, or Neutral. Do not use any other labels. Return the answer in a table with the review number, sentiment classification, and a brief reason.
+
+Reviews:
+
+1. "The product arrived damaged and customer service was unhelpful."
+2. "Works as expected, nothing special but does the job."
+3. "Absolutely love this! Best purchase I've made all year!"
+4. "The quality is okay but slightly overpriced for what you get."
+5. "Terrible experience, would not recommend to anyone."
+
+**Zero-Shot LLM Output:**
+
+| Review # | Sentiment Classification | Brief Reason |
+|----------|--------------------------|--------------|
+| 1 | Negative | The product arrived damaged, and customer service was unhelpful. |
+| 2 | Neutral | The product works as expected, but the review does not show strong satisfaction or dissatisfaction. |
+| 3 | Positive | The customer expresses strong excitement and says it was the best purchase of the year. |
+| 4 | Neutral | The review is mixed because the quality is acceptable, but the price is criticized. |
+| 5 | Negative | The customer describes the experience as terrible and says they would not recommend it. |
+
+---
+
+#### Step 2: Few-Shot Prompting Attempt
+
+**Few-Shot Prompt:**
+
+You are a customer review sentiment classifier. Your task is to classify each customer review as exactly one of the following labels: **Positive**, **Negative**, or **Neutral**.
+
+Use these rules:
+
+- **Positive:** The customer is clearly satisfied, happy, excited, or recommends the product.
+- **Negative:** The customer is clearly dissatisfied, complains about the product or service, or discourages others from buying.
+- **Neutral:** The customer gives mixed, mild, or factual feedback without strong positive or negative emotion.
+
+Examples:
+
+Review: "The delivery was fast, and the product works perfectly."  
+Classification: Positive
+
+Review: "The item is fine. It does what it says, but I am not impressed."  
+Classification: Neutral
+
+Review: "The product broke after one day, and support never responded."  
+Classification: Negative
+
+Review: "The design is nice, but the price feels too high."  
+Classification: Neutral
+
+Now classify the following reviews. Return the answer in a table with the review number, sentiment classification, and a brief reason.
+
+Reviews:
+
+1. "The product arrived damaged and customer service was unhelpful."
+2. "Works as expected, nothing special but does the job."
+3. "Absolutely love this! Best purchase I've made all year!"
+4. "The quality is okay but slightly overpriced for what you get."
+5. "Terrible experience, would not recommend to anyone."
+
+**Few-Shot LLM Output:**
+
+| Review # | Sentiment Classification | Brief Reason |
+|----------|--------------------------|--------------|
+| 1 | Negative | The review mentions a damaged product and unhelpful customer service, which clearly shows dissatisfaction. |
+| 2 | Neutral | The product meets expectations, but the wording is mild and does not express strong praise. |
+| 3 | Positive | The customer uses enthusiastic language and describes it as the best purchase of the year. |
+| 4 | Neutral | The review contains mixed feedback because the quality is acceptable, but the price is viewed negatively. |
+| 5 | Negative | The customer describes the experience as terrible and directly says they would not recommend it. |
+
+---
+
+#### Comparison Table
+
+| Review # | Zero-Shot Classification | Few-Shot Classification | Difference |
+|----------|--------------------------|--------------------------|------------|
+| 1 | Negative | Negative | Both correctly identified the complaint as negative. |
+| 2 | Neutral | Neutral | Both recognized the review as mild and factual rather than strongly positive. |
+| 3 | Positive | Positive | Both correctly classified the enthusiastic review as positive. |
+| 4 | Neutral | Neutral | Both classified the mixed feedback as neutral, but the few-shot output explained the mixed sentiment more clearly. |
+| 5 | Negative | Negative | Both correctly identified the strong dissatisfaction. |
+
+---
+
+#### Analysis
+
+The zero-shot prompt classified the reviews correctly, but it depended only on the model's general understanding of sentiment. The few-shot prompt was stronger because it provided examples and clear rules for how to classify positive, negative, and neutral reviews. This helped the model handle mixed reviews more consistently, especially reviews that included both acceptable and negative details. Few-shot prompting is useful because it teaches the model the expected format and decision-making pattern before asking it to complete the task. One limitation is that the quality of the output depends heavily on the examples provided, so weak or biased examples could lead to incorrect classifications.
